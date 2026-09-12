@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/vcpkg-tool/main/docs/vcpkg.schema.json",
+  "name": "sysmon",
+  "version": "1.0.0",
+  "description": "本地系统监控仪（类似 Windows 任务管理器）",
+  "dependencies": [
+    "fmt"
+  ]
+}

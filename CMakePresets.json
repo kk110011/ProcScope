@@ -1,0 +1,44 @@
+{
+  "$schema": "https://raw.githubusercontent.com/Kitware/CMake/master/Help/manual/cmake-presets.7.json",
+  "version": 8,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 30,
+    "patch": 0
+  },
+
+  "configurePresets": [
+    {
+      "name": "msvc-x64",
+      "displayName": "MSVC x64 (Visual Studio 17 2022)",
+      "description": "默认预设：用 VS Build Tools 的 MSVC 编译器；依赖由 vcpkg 清单模式提供",
+      "generator": "Visual Studio 17 2022",
+      "architecture": {
+        "value": "x64",
+        "strategy": "set"
+      },
+      "binaryDir": "${sourceDir}/build",
+
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "$env{VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+
+        "VCPKG_TARGET_TRIPLET": "x64-windows"
+      }
+    }
+  ],
+
+  "buildPresets": [
+    {
+      "name": "debug",
+      "displayName": "构建 Debug",
+      "configurePreset": "msvc-x64",
+      "configuration": "Debug"
+    },
+    {
+      "name": "release",
+      "displayName": "构建 Release",
+      "configurePreset": "msvc-x64",
+      "configuration": "Release"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+# ---------- 构建产物 ----------
+build/
+out/
+cmake-build-*/
+
+# ---------- vcpkg ----------
+# 清单模式下，vcpkg 会把依赖装到 build/ 里，一般不需要单独忽略；
+# 但如果你哪天改成经典模式（全局安装），下面这行能防止误提交几万个文件。
+vcpkg_installed/
+
+# ---------- Visual Studio ----------
+.vs/
+*.user
+*.suo
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
+# ---------- VS Code ----------
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ---------- 其它 ----------
+CMakeUserPresets.json
+*.pdb
+*.ilk
